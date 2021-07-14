@@ -1,0 +1,38 @@
+
+
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h2>Sign In</h2>
+                <form class="wq" (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                        <label>First Name
+                        <input type="text" formControlName="firstName" class="form-control" /></label></div>
+                        <div *ngIf="requiredForm.controls['firstName'].invalid && requiredForm.controls['firstName'].touched " class="error">
+                            <div *ngIf="requiredForm.controls['firstName'].errors.required">
+                           First Name is required.
+                           </div>
+                        </div>
+                  
+                    <br>
+                    <div class="form-group">
+                        <label>Password
+                        <input type="password" formControlName="password" class="form-control" /></label></div>
+                        <div *ngIf="requiredForm.controls['password'].invalid && requiredForm.controls['password'].touched" class="error">
+                            <div *ngIf="requiredForm.controls['password'].errors.required">
+                                password is required.
+                           </div>
+                           <small>Password must be at least 6 characters</small><br><br>
+                           </div><br>
+                    <div class="form-group">
+                        <button  class="button">Log in</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+ 
+       
+  <router-outlet></router-outlet>
